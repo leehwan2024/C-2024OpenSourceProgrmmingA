@@ -8,7 +8,10 @@ import (
 
 func main() {
 	in := bufio.NewReader(os.Stdin)
-	i, _ := in.ReadString('\n')
-	fmt.Println(i)
+	fmt.Println("Input your name")
+	name, err := in.ReadString('\n')
+	fmt.Println(name)
+	fmt.Println(err)
+	fmt.Println(err)
 
 }
