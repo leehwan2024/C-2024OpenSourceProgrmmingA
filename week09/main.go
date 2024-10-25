@@ -13,9 +13,8 @@ import (
 
 func main() {
 	rand.Seed(time.Now().Unix())
-	answer := rand.Intn(6) + 1
-	fmt.Printf("%d\n", answer)
-	for guesses := 3; guesses > 0; guesses-- {
+	answer := rand.Intn(100) + 1
+	for guesses := 6; guesses > 0; guesses-- {
 		fmt.Printf("%d번 기회가 남았습니다. \n점수 입력: ", guesses)
 		r := bufio.NewReader(os.Stdin)
 		i, err := r.ReadString('\n')
@@ -42,4 +41,5 @@ func main() {
 		}
 
 	}
+	fmt.Printf("정답은 %d", answer)
 }
