@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -28,7 +29,7 @@ func main() {
 	}
 
 	j := 0
-	for j = 2; j < n; j++ {
+	for j = 2; j <= int(math.Sqrt(float64(n))); j++ {
 		if n%j == 0 {
 			//count++
 			isPrime = false
