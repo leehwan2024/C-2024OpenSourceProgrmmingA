@@ -23,6 +23,10 @@ func main() {
 	//count := 0
 	var isPrime bool = true
 
+	if n <= 1 {
+		isPrime = false
+	}
+
 	for j := 2; j < n; j++ {
 		if n%j == 0 {
 			//count++
