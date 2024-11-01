@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -26,16 +25,20 @@ func main() {
 
 	if n <= 1 {
 		isPrime = false
-	}
-
-	j := 0
-	for j = 2; j <= int(math.Sqrt(float64(n))); j++ {
-		if n%j == 0 {
-			//count++
-			isPrime = false
-			break
+	} else if n == 2 {
+		isPrime = true
+	} else if n%2 == 0 {
+		isPrime = false
+	} else {
+		for j := 3; j*j <= n; j += 2 {
+			if n%j == 0 {
+				//count++
+				isPrime = false
+				break
+			}
+			fmt.Printf("%d\n", j)
 		}
-		fmt.Printf("%d번 반복했습니다\n", j-1)
+
 	}
 	if isPrime {
 		fmt.Printf("%d은(는) 소수입니다.", n)
