@@ -27,11 +27,14 @@ func main() {
 		isPrime = false
 	}
 
-	for j := 2; j < n; j++ {
+	j := 0
+	for j = 2; j < n; j++ {
 		if n%j == 0 {
 			//count++
 			isPrime = false
+			break
 		}
+		fmt.Printf("%d번 반복했습니다\n", j-1)
 	}
 	if isPrime {
 		fmt.Printf("%d은(는) 소수입니다.", n)
