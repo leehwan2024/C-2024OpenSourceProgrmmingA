@@ -20,13 +20,16 @@ func main() {
 	i = strings.TrimSpace(i)
 	n, err := strconv.Atoi(i)
 
-	count := 0
-	for j := 1; j <= n; j++ {
+	//count := 0
+	var isPrime bool = true
+
+	for j := 2; j < n; j++ {
 		if n%j == 0 {
-			count++
+			//count++
+			isPrime = false
 		}
 	}
-	if count == 2 {
+	if isPrime {
 		fmt.Printf("%d은(는) 소수입니다.", n)
 	} else {
 		fmt.Printf("%d은(는) 소수가 아닙니다.", n)
