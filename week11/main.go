@@ -1,4 +1,3 @@
-// print prime number between two input numbers
 package main
 
 import (
@@ -10,8 +9,8 @@ import (
 	"strings"
 )
 
+// isPrime 함수: 주어진 수가 소수인지 판별
 func isPrime(n int) bool {
-
 	if n <= 1 {
 		return false
 	} else if n == 2 {
@@ -21,45 +20,50 @@ func isPrime(n int) bool {
 	} else {
 		for j := 3; j*j <= n; j += 2 {
 			if n%j == 0 {
-				//count++
 				return false
 			}
-			//fmt.Printf("%d\n", j)
 		}
 	}
 	return true
 }
-func main() {
-	fmt.Print("첫 번째 점수 입력: ")
+
+// getInteger 함수: 사용자로부터 정수를 입력받음
+func getInteger() (int, error) {
 	r := bufio.NewReader(os.Stdin)
 	a, err := r.ReadString('\n')
 	if err != nil {
-		log.Fatal(err)
+		return 0, err
 	}
 
 	a = strings.TrimSpace(a)
-	n1, err := strconv.Atoi(a)
+	n, err := strconv.Atoi(a)
+	if err != nil {
+		return 0, err
+	}
+	return n, nil
+}
+
+func main() {
+	// 첫 번째 점수 입력 받기
+	fmt.Print("첫 번째 점수 입력: ")
+	n1, err := getInteger()
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// 두 번째 점수 입력 받기
 	fmt.Print("두 번째 점수 입력: ")
-
-	b, err := r.ReadString('\n')
+	n2, err := getInteger()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	b = strings.TrimSpace(b)
-	n2, err := strconv.Atoi(b)
-	if err != nil {
-		log.Fatal(err)
-	}
-	//count := 0
-
+	// 첫 번째 점수부터 두 번째 점수까지 소수 출력
+	fmt.Printf("소수 리스트 (%d부터 %d까지):\n", n1, n2)
 	for i := n1; i <= n2; i++ {
 		if isPrime(i) {
 			fmt.Printf("%d ", i)
 		}
 	}
-
+	fmt.Println() // 마지막 줄바꿈
 }
