@@ -26,7 +26,7 @@ func isPrime(n int) bool {
 			//fmt.Printf("%d\n", j)
 		}
 	}
-	return false
+	return true
 }
 func main() {
 	fmt.Print("점수 입력: ")
