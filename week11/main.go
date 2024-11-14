@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"week11/keyboard"
 )
 
 func isPrime(n int) bool {
@@ -34,5 +35,11 @@ func main() {
 	n2, err := keyboard.GetInteger()
 	if err != nil {
 		log.Fatal(err)
+	}
+
+	for i := n1; i <= n2; i++ {
+		if isPrime(i) {
+			fmt.Printf("%d ", i)
+		}
 	}
 }
