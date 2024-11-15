@@ -10,10 +10,10 @@ func main() {
 		time.Unix(12, 0),
 		time.Unix(1735244111, 0)}
 
-	for i := 0; i < len(dates); i++ {
-		fmt.Println(i, "번째 배열", dates[i])
+	for i, v := range dates {
+		fmt.Println(i, v)
 	}
-	// fmt.Printf("%v\n", dates)
-	// fmt.Println(dates[0], dates[1], dates[2])
-
+	//for i := 0; i < len(dates); i++ {
+	//	fmt.Println(i, "번째 배열", dates[i])
+	//}
 }
