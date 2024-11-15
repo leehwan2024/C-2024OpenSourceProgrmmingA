@@ -10,7 +10,7 @@ func main() {
 
 	var gpa [3]float64
 	for i := 0; i < len(gpa); i++ {
-		fmt.Println("Input float number:")
+		fmt.Print("Input float number: ") //go get github.com/headfirstgo/keyboard
 		gpa[i], _ = keyboard.GetFloat()
 	}
 	for i, v := range gpa {
