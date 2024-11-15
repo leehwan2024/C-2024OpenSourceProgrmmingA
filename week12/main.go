@@ -2,28 +2,14 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/headfirstgo/keyboard"
+	"reflect"
 )
 
 func main() {
 
-	var gpa [3]float64
-	for i := 0; i < len(gpa); i++ {
-		fmt.Print("Input float number: ") //go get github.com/headfirstgo/keyboard
-		gpa[i], _ = keyboard.GetFloat()
-	}
-	for i, v := range gpa {
-		fmt.Printf("%v: %f\n", i, v)
-	}
-	/*var dates = [3]time.Time{time.Unix(1, 0),
-		time.Unix(12, 0),
-		time.Unix(1735244111, 0)}
+	var gpa [5]float64 = [5]float64{3.5, 4.1, 3.9, 4.23}
+	gpa_slice := gpa[1:4]
 
-	for i, _ := range dates {
-		fmt.Println(i)
-	}*/
-	//for i := 0; i < len(dates); i++ {
-	//	fmt.Println(i, "번째 배열", dates[i])
-	//}
+	fmt.Println(gpa_slice, reflect.TypeOf(gpa_slice))
+	fmt.Println(gpa, reflect.TypeOf(gpa))
 }
